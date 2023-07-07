@@ -36,18 +36,16 @@
     ```
     {
     "oneEnergyMonitoring": {
-        "id": 12,
         "panel_name": "PANEL LANTAI 1",
-        "energy": 1107.5,
-        "power": 1870.12,
-        "electric_current": 54918.53,
-        "voltage": 28023.41,
-        "createdAt": "2023-07-07T08:38:59.432Z",
-        "updatedAt": "2023-07-07T08:38:59.432Z"
+        "energy": 1117.6,
+        "power": 1887.17,
+        "electric_current": 55400.62,
+        "voltage": 28282.8,
+        "createdAt": "2023-07-07T16:18:00.104Z"
     },
-    "todayUsageEnergy": 107.5,
-    "costEnergy": 161250
-    }
+    "todayUsageEnergy": 117.59999999999991,
+    "costEnergy": 176399.99999999985
+}
     ```
 
 2. Get Monthly Report

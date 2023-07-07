@@ -10,10 +10,10 @@ class EnergyMonitoringController {
       prevDate.setHours(7, 0, 0, 0);
       console.log(prevDate);
       if (name) {
-        // const allEnergyMonitoring = await EnergyMonitoring.findAll({
-        //   where: { panel_name: name },
-        // });
         const oneEnergyMonitoring = await EnergyMonitoring.findOne({
+          attributes: {
+            exclude: ["id", "updatedAt"],
+          },
           where: { panel_name: name },
           order: [["createdAt", "DESC"]],
         });
@@ -29,10 +29,14 @@ class EnergyMonitoringController {
         const todayUsageEnergy =
           oneEnergyMonitoring.energy - prevUsageEnergy.energy;
         const costEnergy = todayUsageEnergy * 1500;
-        res
+        oneEnergyMonitoring.dataValues.createdAt.setUTCHours(
+          oneEnergyMonitoring.dataValues.createdAt.getUTCHours() + 7
+        );
+        return res
           .status(200)
           .json({ oneEnergyMonitoring, todayUsageEnergy, costEnergy });
       }
+      throw new Error("Panel name is required");
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
