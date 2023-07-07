@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "64da7612-74aa-4d27-b1a5-84ae4d5863ed",
+		"name": "Ravelware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18353569"
+	},
+	"item": [
+		{
+			"name": "Get Energy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000?name=PANEL LANTAI 1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"query": [
+						{
+							"key": "name",
+							"value": "PANEL LANTAI 1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Monthly Usage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/monthly",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"monthly"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
